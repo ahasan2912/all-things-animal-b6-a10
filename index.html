@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Things Animal</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8ba9c3bc75.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .font-family {
+            font-family: "Lato", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="font-family">
+    <header class="w-11/12 mx-auto">
+        <!-- navbar secion -->
+        <nav class="">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-base font-bold">
+                            <li><a>Home</a></li>
+                            <li><a>Shop</a></li>
+                            <li><a>Contact</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-xl">
+                        <img src="/images/logo.webp" alt="">
+                        <h1 class="text-2xl font-bold">Peddy</h1>
+                    </a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-base font-semibold">
+                        <li><a>Home</a></li>
+                        <li><a>Shop</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <div class="bg-gray-300 w-10 h-10 text-center rounded-full"><i
+                            class="fa-regular fa-user mt-[10px]"></i></div>
+                </div>
+            </div>
+        </nav>
+        <!-- banner section -->
+        <div class="text-center flex flex-col justify-center items-center mt-8">
+            <div class="w-full md:w-[790px] space-y-7">
+                <h4 class="text-xl sm:text-2xl font-bold text-[#13131399]">Bringing Families Together ❤️‍🔥 </h4>
+                <h1 class="text-5xl sm:text-6xl font-extrabold">Your Path to Adoption <br> Starts Here</h1>
+                <p class="text-base text-[#13131399] font-semibold">Discover a world of compassion and companionship as
+                    you embark on a journey to welcome a new furry family member. Your path to adoption begins here,
+                    where every pet is a step closer to finding their forever home."</p>
+                <div>
+                    <a href="#adop-best-friend">
+                        <button class="btn bg-[#0E7A81] text-white text-lg font-bold">View More</button>
+                    </a>
+                </div>
+            </div>
+            <img class="" src="./images/pet.webp" alt="pet picture">
+        </div>
+    </header>
+    <main class="w-11/12 mx-auto mt-6">
+        <section id="adop-best-friend">
+            <div class="w-full md:w-[600px] mx-auto space-y-7 text-center">
+                <h1 class="text-4xl sm:text-5xl font-extrabold">Adopt Your Best Friend</h1>
+                <p class="text-base text-[#13131399] font-semibold">Find unconditional love and a loyal companion
+                    through adoption. Your best friend is waiting, ready to bring joy, comfort, and laughter into your
+                    life.</p>
+            </div>
+            <div id="category-container"
+                class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12 place-items-center mt-8">
+                <!-- Daynamic button create from api -->
+            </div>
+            <!-- spinner -->
+            <div id="loder-container" class="flex justify-center items-center mt-4">
+                <div id="lds-facebook" class="lds-facebook hidden">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="mt-6">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-2xl font-bold">Best Deal For you</h1>
+                    <button id="sorting" class="btn bg-[#0E7A81] text-white text-xl">Sort by Price</button>
+                </div>
+                <div class="flex flex-col lg:flex-row justify-between mt-6">
+                    <div class="w-full lg:w-[73%]">
+                        <div id="all-category-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- <div class="flex flex-col items-start border p-2 rounded-xl gap-3">
+                                <img class="rounded-xl w-full" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                alt="Picture" />
+                                <div class="space-y-1">
+                                    <h4 class="text-xl font-bold">Mister Tartosh</h4>
+                                    <p class="text-base"><i class="fa-solid fa-border-all"></i> Breed: Golder retriever</p>
+                                    <p class="text-base"><i class="fa-solid fa-calendar-days"></i> Birth: 2024</p>
+                                    <p class="text-base"><i class="fa-solid fa-mercury"></i> Gender: Female</p>
+                                    <p class="text-base"><i class="fa-solid fa-dollar-sign"></i> Price : 199$</p>
+                                    <div class="text-center space-x-3 border-t">
+                                        <button class="btn bg-[#0E7A81] text-white text-base mt-3"><i class="fa-regular fa-thumbs-up"></i></button>
+                                        <button class="btn bg-[#0E7A81] text-white text-base">Adopt</button>
+                                        <button class="btn bg-[#0E7A81] text-white text-base">Details</button>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="lg:w-[24%] mt-6 lg:mt-0">
+                        <div id="store-image" class="grid grid-cols-2 gap-5 border rounded-lg p-3">
+                            <!-- Dinamically store -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Open the modal using ID.showModal() method -->
+                <dialog id="customModal" class="modal">
+                    <div class="modal-box">
+                        <div id="modal-container"></div>
+                        <div class="text-center">
+                            <form method="dialog">
+                                <button class="btn bg-[#0E7A81] w-full text-base text-white font-bold">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
+            </div>
+            <!-- Adopt button modal -->
+            <!-- Open the modal using ID.showModal() method -->
+
+            <dialog id="customModal-two" class="modal">
+                <div id="show-timer" class="modal-box text-center">
+                    <div class="flex justify-center items-center">
+                        <img class="w-16" src="https://img.icons8.com/?size=48&id=q6BlPrJZmxHV&format=png" alt="">
+                    </div>
+                    <h3 class="text-4xl font-extrabold">Contgratulations!</h3>
+                    <p class="py-3 text-xl font-semibold">Adoption process is starting for your pet</p>
+                    <h1 class="text-5xl font-extrabold" id="show-the-number">3</h1>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
+        </section>
+    </main>
+    <footer class="footer bg-black text-neutral-content py-10 mt-20">
+        <div class="w-11/12 mx-auto flex flex-col sm:flex-row justify-between">
+            <nav>
+                <div class="flex items-center space-x-2">
+                    <img src="/images/logo.webp" alt="">
+                    <h2 class="text-2xl font-bold">Peddy</h2>
+                </div>
+                <ul class="mt-4 list-none text-base">
+                    <li class=""><a href="#">Location: av. Washington 165, NYCA</a></li>
+                    <li class="mt-1"><a href="#">54003</a></li>
+                    <li class="mt-1"><a href="#">Phone: +31 85 9664 47 25</a></li>
+                    <li class="mt-1"><a href="#"></a>Email: ahasanhabib2912@gmail.com</li>
+                    <li class="mt-1"><a href="#"></a>Opening hours: 9.00 AM - 5.00 PM</li>
+                </ul>
+                <div class="list-none flex space-x-5 text-3xl mt-2">
+                    <li><a href="#"></a><i class="fa-brands fa-facebook text-blue-500"></i></li>
+                    <li><a href="#"></a><i class="fa-brands fa-x-twitter"></i></li>
+                    <li><a href="#"></a><i class="fa-brands fa-youtube text-red-500"></i></li>
+                    <li><a href="#"></a><i class="fa-brands fa-instagram text-[#aa3a85]"></i></li>
+                </div>
+            </nav>
+            <nav>
+                <h1 class="text-2xl font-bold">Useful Links</h1>
+                <ul class="mt-4 list-none text-base">
+                    <li class=""><a href="#"></a>Home</li>
+                    <li class="mt-1"><a href="#"></a>About Us</li>
+                    <li class="mt-1"><a href="#"></a>Animals</li>
+                    <li class="mt-1"><a href="#"></a>Foundation</li>
+                    <li class="mt-1"><a href="#"></a>Contact</li>
+                </ul>
+            </nav>
+            <nav>
+                <h1 class="text-2xl font-bold">Drop a Message</h1>
+                <ul class="mt-4 list-none text-base flex flex-col items-start gap-4">
+                    <input class="px-4 py-3 rounded-lg" type="email" placeholder="Enter yout email">
+                    <input class="px-4 py-3 rounded-lg bg-[#0E7A81] w-full text-lg font-bold" type="submit"
+                        value="Subscribe">
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script src="./src/mian.js"></script>
+</body>
+
+</html>
