@@ -170,6 +170,7 @@ const countDownFunction = ((petId) => {
             // petId.setAttribute('disabled', true);
             petId.disabled = true;
             petId.classList.add('bg-red-500');
+            petId.classList.remove('hover:bg-gray-400');
         }
     }, 1000);
 });
