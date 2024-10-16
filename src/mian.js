@@ -19,11 +19,14 @@ const loadCategoriesWiseData = async (categorie, id) => {
     const data = await res.json();
     removeActiveClass();
     const activeBtn = document.getElementById(`btn-${id}`);
+    /* document.getElementById('lds-facebook').classList.remove("hidden");
+    document.getElementById('all-category-container').classList.add('hidden'); */
     activeBtn.classList.add('active');
     spinnerTime();
     const timeOut = setTimeout(() => {
         document.getElementById('lds-facebook').classList.add("hidden");
-        dispalyAllCategories(data.data);    }, 2000);
+        dispalyAllCategories(data.data);
+    }, 2000);
 };
 
 //details information
@@ -32,13 +35,13 @@ const loadDetailsInfo = async (petId) => {
     const data = await res.json(res);
     displayDetailsInfo(data.petData);
 }
+
 //dispaly all categories
 const dispalyAllCategories = (categories) => {
     //sorting
     document.getElementById('sorting').addEventListener('click', () => {
         spinnerTime();
         setInterval(() => {
-            document.getElementById('lds-facebook').classList.add("hidden");
             document.getElementById('lds-facebook').classList.add("hidden");
             const sort = categories.sort((a, b) => {
                 return b.price - a.price;
@@ -78,7 +81,7 @@ const dispalyAllCategories = (categories) => {
             <p class="text-base"><i class="fa-solid fa-dollar-sign"></i> Price : ${price ? `${price}` : `Not Available`}</p>
             <div class="text-center border-t xl:space-x-2">
                 <button class="px-3 py-3 rounded-md bg-[#0E7A81] text-white text-base mt-3 font-semibold hover:bg-gray-400" onclick = "showStoreImage('${image}')"><i class="fa-regular fa-thumbs-up"></i></button>                
-                <button id="btn-${petId}" class="px-2 py-3 rounded-md bg-[#0E7A81] text-white text-base font-semibold hover:bg-gray-400" onclick="countDownFunction(${petId})">Adopt</button>
+                <button id="btn-${petId}" class="px-2 py-3 rounded-md bg-[#0E7A81] border text-white text-base font-semibold hover:bg-gray-400" onclick="countDownFunction(this)">Adopt</button>
                 <button class="px-2 py-3 rounded-md bg-[#0E7A81] text-white text-base font-semibold hover:bg-gray-400" onclick = "loadDetailsInfo(${petId})">Details</button>
             </div>
         </div>
@@ -86,7 +89,6 @@ const dispalyAllCategories = (categories) => {
         allCategoryContainer.appendChild(div);
     });
 }
-
 //display Categories
 const displayCategories = async (categories) => {
     const categoryContainer = document.getElementById('category-container');
@@ -153,17 +155,21 @@ const spinnerTime = () => {
 
 const countDownFunction = ((petId) => {
     document.getElementById('customModal-two').showModal();
-    const showTimer = document.getElementById('show-timer');
     const countDown = document.getElementById('show-the-number');
     let number = 3;
-    showTimer.classList.remove('hidden');
+    countDown.innerText = number;
     const interval = setInterval(() => {
-        countDown.innerText = number;
         number--;
-        if (number < 0) {
+        if (number !== 0){
+            countDown.innerText = number;
+        }
+        if (number < 1) {
             clearInterval(interval);
             document.getElementById('customModal-two').close();
-            countDown.innerText = 3;
+            petId.innerText = 'Adopted';
+            // petId.setAttribute('disabled', true);
+            petId.disabled = true;
+            petId.classList.add('bg-red-500');
         }
     }, 1000);
 });
