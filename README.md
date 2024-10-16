@@ -16,7 +16,7 @@ Things Animal" is a JavaScript-based project using DOM manipulation, ES6 feature
 - Object Destructuring
 - Async/Await 
 #
-# [Live-site: ](https://animated-trifle-41ea05.netlify.app)
+# [Live-site: ](https://all-things-animal-b10-a6.netlify.app/)
 
 ## APIs
 
