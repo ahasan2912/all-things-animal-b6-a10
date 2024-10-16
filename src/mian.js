@@ -169,7 +169,7 @@ const countDownFunction = ((petId) => {
             petId.innerText = 'Adopted';
             // petId.setAttribute('disabled', true);
             petId.disabled = true;
-            petId.classList.add('bg-red-500');
+            petId.classList.add('bg-gray-400');
             petId.classList.remove('hover:bg-gray-400');
         }
     }, 1000);
